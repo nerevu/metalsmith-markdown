@@ -15,7 +15,7 @@ describe('metalsmith-markdown', function() {
       )
       .build(function(err) {
         if (err) return done(err);
-        equal('test/fixtures/basic/expected', 'test/fixtures/basic/build');
+        equal('test/fixtures/basic/build', 'test/fixtures/basic/expected');
         done();
       });
   });
@@ -30,7 +30,7 @@ describe('metalsmith-markdown', function() {
       )
       .build(function(err, files) {
         if (err) return done(err);
-        assert.equal('<p><em>a</em></p>\n', files['index.html'].custom);
+        assert.equal(files['index.html'].custom, '<p><em>a</em></p>\n');
         done();
       });
   });
